@@ -39,7 +39,7 @@ jobs:
           # Upload entire repository
           path: '.'
       - name: Publish to GitHub Pages
-        uses: features/gh-pages@v3
+        uses: action/gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/_build/html
