@@ -1,0 +1,7 @@
+backtestingRetrivesDatas module
+===============================
+
+.. automodule:: backtestingRetrivesDatas
+   :members:
+   :undoc-members:
+   :show-inheritance:

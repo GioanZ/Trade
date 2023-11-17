@@ -1,0 +1,7 @@
+indicatorKC module
+==================
+
+.. automodule:: indicatorKC
+   :members:
+   :undoc-members:
+   :show-inheritance:

@@ -1,0 +1,7 @@
+strategyKC module
+=================
+
+.. automodule:: strategyKC
+   :members:
+   :undoc-members:
+   :show-inheritance:

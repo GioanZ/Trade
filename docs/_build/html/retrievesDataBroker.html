@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>retrievesDataBroker module &#8212; Keltner-Channels 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=f6245a2f"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-retrievesDataBroker">
+<span id="retrievesdatabroker-module"></span><h1>retrievesDataBroker module<a class="headerlink" href="#module-retrievesDataBroker" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="retrievesDataBroker.set_store">
+<span class="sig-prename descclassname"><span class="pre">retrievesDataBroker.</span></span><span class="sig-name descname"><span class="pre">set_store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency_trade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">CCXTStore</span></span></span><a class="headerlink" href="#retrievesDataBroker.set_store" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set up and return a CCXTStore instance.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>exchange_id (str): Identifier for the exchange.
+currency_trade (str): Currency used for trading.</p>
+</dd>
+<dt>Returns:</dt><dd><p>CCXTStore: Configured CCXTStore instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="retrievesDataBroker.retrieves_data">
+<span class="sig-prename descclassname"><span class="pre">retrievesDataBroker.</span></span><span class="sig-name descname"><span class="pre">retrieves_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">curr_traded</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency_trade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CCXTStore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">CCXTFeed</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#retrievesDataBroker.retrieves_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve data using CCXTStore based on specified parameters.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>curr_traded (str): Symbol of the traded asset.
+currency_trade (str): Currency used for trading.
+store (CCXTStore): CCXTStore instance.
+data_args (dict): Dictionary containing data-related arguments.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Type[CCXTStore.DataCls]: Retrieved data instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="retrievesDataBroker.retrive_broker_mapping">
+<span class="sig-prename descclassname"><span class="pre">retrievesDataBroker.</span></span><span class="sig-name descname"><span class="pre">retrive_broker_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#retrievesDataBroker.retrive_broker_mapping" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retrieve broker mapping for order types and order status.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>exchange_id (str): Identifier for the exchange.</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict: Broker mapping for order types and status.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Keltner-Channels</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">src</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Giovanni Sanchez.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/retrievesDataBroker.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

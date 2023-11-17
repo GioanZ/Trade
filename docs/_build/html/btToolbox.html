@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>btToolbox package &mdash; Keltner-Channels 0.0.1 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=f6245a2f"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="liveMainKC module" href="liveMainKC.html" />
+    <link rel="prev" title="backtestingMainKC module" href="backtestingMainKC.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Keltner-Channels
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="backtestingMainKC.html">backtestingMainKC module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">btToolbox package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-btToolbox.backtestingAnalysis">btToolbox.backtestingAnalysis module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingAnalysis.analysis"><code class="docutils literal notranslate"><span class="pre">analysis()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingAnalysis.print_md"><code class="docutils literal notranslate"><span class="pre">print_md()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingAnalysis.overview_init_end"><code class="docutils literal notranslate"><span class="pre">overview_init_end()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingAnalysis.overview_year"><code class="docutils literal notranslate"><span class="pre">overview_year()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingAnalysis.overview_bars"><code class="docutils literal notranslate"><span class="pre">overview_bars()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingAnalysis.annual_max_min_increase_perc_asset"><code class="docutils literal notranslate"><span class="pre">annual_max_min_increase_perc_asset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingAnalysis.print_message"><code class="docutils literal notranslate"><span class="pre">print_message()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-btToolbox.backtestingRetrivesDatas">btToolbox.backtestingRetrivesDatas module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingRetrivesDatas.retireves_data_path"><code class="docutils literal notranslate"><span class="pre">retireves_data_path()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingRetrivesDatas.retrievesBinance"><code class="docutils literal notranslate"><span class="pre">retrievesBinance()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingRetrivesDatas.retrivesDatas"><code class="docutils literal notranslate"><span class="pre">retrivesDatas()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.backtestingRetrivesDatas.retrives_strategy"><code class="docutils literal notranslate"><span class="pre">retrives_strategy()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-btToolbox.indicatorKC">btToolbox.indicatorKC module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels"><code class="docutils literal notranslate"><span class="pre">IndicatorKeltnerChannels</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-btToolbox.loggingUtils">btToolbox.loggingUtils module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.loggingUtils.log"><code class="docutils literal notranslate"><span class="pre">log()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.loggingUtils.notify_order"><code class="docutils literal notranslate"><span class="pre">notify_order()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.loggingUtils.print_values_candel"><code class="docutils literal notranslate"><span class="pre">print_values_candel()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-btToolbox.retrievesDataBroker">btToolbox.retrievesDataBroker module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.retrievesDataBroker.set_store"><code class="docutils literal notranslate"><span class="pre">set_store()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.retrievesDataBroker.retrieves_data"><code class="docutils literal notranslate"><span class="pre">retrieves_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.retrievesDataBroker.retrive_broker_mapping"><code class="docutils literal notranslate"><span class="pre">retrive_broker_mapping()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-btToolbox.strategyKC">btToolbox.strategyKC module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#btToolbox.strategyKC.KeltnerChannelsStrategy"><code class="docutils literal notranslate"><span class="pre">KeltnerChannelsStrategy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-btToolbox">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="liveMainKC.html">liveMainKC module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="parseArgs.html">parseArgs module</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Keltner-Channels</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">btToolbox package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/btToolbox.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bttoolbox-package">
+<h1>btToolbox package<a class="headerlink" href="#bttoolbox-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-btToolbox.backtestingAnalysis">
+<span id="bttoolbox-backtestinganalysis-module"></span><h2>btToolbox.backtestingAnalysis module<a class="headerlink" href="#module-btToolbox.backtestingAnalysis" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingAnalysis.analysis">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingAnalysis.</span></span><span class="sig-name descname"><span class="pre">analysis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">strat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cerebro</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Cerebro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_analisys_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.backtestingAnalysis.analysis" title="Permalink to this definition"></a></dt>
+<dd><p>Perform analysis on the strategy and print the results.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>strat (bt.Strategy): Backtrader strategy instance.
+cerebro (bt.Cerebro): Backtrader engine instance.
+data_args (dict): Dictionary containing data-related arguments.
+data_analisys_list (list): List of data for analysis.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingAnalysis.print_md">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingAnalysis.</span></span><span class="sig-name descname"><span class="pre">print_md</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pd.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_text</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.backtestingAnalysis.print_md" title="Permalink to this definition"></a></dt>
+<dd><p>Pretty print a Pandas DataFrame in Markdown format.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>df (pd.DataFrame): DataFrame to be printed.
+end_text (str | None): Additional text to be printed at the end.
+index (bool): Whether to include the DataFrame index.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingAnalysis.overview_init_end">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingAnalysis.</span></span><span class="sig-name descname"><span class="pre">overview_init_end</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cerebro</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Cerebro</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timer_return</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annual_return</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trade_analyzer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sqn</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sharpe_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">draw_downer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedDict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.backtestingAnalysis.overview_init_end" title="Permalink to this definition"></a></dt>
+<dd><p>Print an overview of the initial and final states of the strategy.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>data_args (dict): Dictionary containing data-related arguments.
+cerebro (bt.Cerebro): Backtrader engine instance.
+timer_return (OrderedDict): Timereturn analysis results.
+annual_return (OrderedDict): Annualreturn analysis results.
+trade_analyzer (OrderedDict): Tradeanalyzer analysis results.
+sqn (OrderedDict): SQN analysis results.
+sharpe_ratio (OrderedDict): Sharpe ratio analysis results.
+draw_downer (OrderedDict): Drawdown analysis results.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingAnalysis.overview_year">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingAnalysis.</span></span><span class="sig-name descname"><span class="pre">overview_year</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annual_return</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_analisys_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.backtestingAnalysis.overview_year" title="Permalink to this definition"></a></dt>
+<dd><p>Print an overview of annual returns and related data.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>annual_return (OrderedDict): Annualreturn analysis results.
+data_analisys_list (list): List of data for analysis.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingAnalysis.overview_bars">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingAnalysis.</span></span><span class="sig-name descname"><span class="pre">overview_bars</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trade_analyzer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedDict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.backtestingAnalysis.overview_bars" title="Permalink to this definition"></a></dt>
+<dd><p>Print an overview of trade statistics.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>trade_analyzer (OrderedDict): Tradeanalyzer analysis results.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingAnalysis.annual_max_min_increase_perc_asset">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingAnalysis.</span></span><span class="sig-name descname"><span class="pre">annual_max_min_increase_perc_asset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#btToolbox.backtestingAnalysis.annual_max_min_increase_perc_asset" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate annual max, min, and increase percentages for asset data.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>datas (list): List of asset data.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingAnalysis.print_message">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingAnalysis.</span></span><span class="sig-name descname"><span class="pre">print_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">draw_downer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">OrderedDict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.backtestingAnalysis.print_message" title="Permalink to this definition"></a></dt>
+<dd><p>Print a message about the current portfolio loss.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>draw_downer (OrderedDict): Drawdown analysis results.
+value (float): Current portfolio value.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-btToolbox.backtestingRetrivesDatas">
+<span id="bttoolbox-backtestingretrivesdatas-module"></span><h2>btToolbox.backtestingRetrivesDatas module<a class="headerlink" href="#module-btToolbox.backtestingRetrivesDatas" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingRetrivesDatas.retireves_data_path">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingRetrivesDatas.</span></span><span class="sig-name descname"><span class="pre">retireves_data_path</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#btToolbox.backtestingRetrivesDatas.retireves_data_path" title="Permalink to this definition"></a></dt>
+<dd><p>Get the path for data files.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>file_name (str): The name of the data file.</p>
+</dd>
+<dt>Returns:</dt><dd><p>str: The full path for the data file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingRetrivesDatas.retrievesBinance">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingRetrivesDatas.</span></span><span class="sig-name descname"><span class="pre">retrievesBinance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name_file</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeframe</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="headerlink" href="#btToolbox.backtestingRetrivesDatas.retrievesBinance" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve data from the Binance exchange.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>name_file (str): The name of the traded asset.
+from_date (datetime): The starting date for data retrieval.
+timeframe (str): The timeframe for OHLCV data.</p>
+</dd>
+<dt>Returns:</dt><dd><p>pd.DataFrame: The retrieved data in DataFrame format.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingRetrivesDatas.retrivesDatas">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingRetrivesDatas.</span></span><span class="sig-name descname"><span class="pre">retrivesDatas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">curr_traded:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_args:</span> <span class="pre">dict)</span> <span class="pre">-&gt;</span> <span class="pre">(&lt;class</span> <span class="pre">'backtrader.feeds.pandafeed.PandasData'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'pandas.core.frame.DataFrame'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#btToolbox.backtestingRetrivesDatas.retrivesDatas" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve data for backtesting.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>curr_traded (str): The symbol for the traded asset.
+data_args (dict): Dictionary containing data-related arguments.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Tuple[btfeeds.PandasData, pd.DataFrame]: A tuple containing backtrader data feed and the data in DataFrame format.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.backtestingRetrivesDatas.retrives_strategy">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.backtestingRetrivesDatas.</span></span><span class="sig-name descname"><span class="pre">retrives_strategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Type</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#btToolbox.backtestingRetrivesDatas.retrives_strategy" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve the backtesting strategy and its parameters.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>data_args (dict): Dictionary containing strategy-related arguments.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Tuple[Type, Dict]: A tuple containing the strategy class and its parameters.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-btToolbox.indicatorKC">
+<span id="bttoolbox-indicatorkc-module"></span><h2>btToolbox.indicatorKC module<a class="headerlink" href="#module-btToolbox.indicatorKC" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="btToolbox.indicatorKC.IndicatorKeltnerChannels">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">btToolbox.indicatorKC.</span></span><span class="sig-name descname"><span class="pre">IndicatorKeltnerChannels</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Indicator</span></code></p>
+<p>Custom indicator class for Keltner Channels</p>
+<p>Functionality:
+- This indicator consists of two lines, ‘atrlow’ and ‘atrhigh,’
+with the default color cyan. These lines represent the bands of
+the Exponential Moving Average (EMA) with a default period of 20.
+One line is incremented, and the other is decremented by twice the
+value of the Average True Range (ATR) with a default period of 14.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.indicatorKC.IndicatorKeltnerChannels.lines">
+<span class="sig-name descname"><span class="pre">lines</span></span><a class="headerlink" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels.lines" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Lines_LineSeries_LineIterator_DataAccessor_IndicatorBase_Indicator_IndicatorKeltnerChannels</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.indicatorKC.IndicatorKeltnerChannels.plotinfo">
+<span class="sig-name descname"><span class="pre">plotinfo</span></span><a class="headerlink" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels.plotinfo" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AutoInfoClass_pi_LineSeries_pi_LineIterator_pi_DataAccessor_pi_IndicatorBase_pi_Indicator_pi_IndicatorKeltnerChannels</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.indicatorKC.IndicatorKeltnerChannels.plotlines">
+<span class="sig-name descname"><span class="pre">plotlines</span></span><a class="headerlink" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels.plotlines" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AutoInfoClass_pl_LineSeries_pl_LineIterator_pl_DataAccessor_pl_IndicatorBase_pl_Indicator_pl_IndicatorKeltnerChannels</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.indicatorKC.IndicatorKeltnerChannels.params">
+<span class="sig-name descname"><span class="pre">params</span></span><a class="headerlink" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels.params" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AutoInfoClass_LineRoot_LineMultiple_LineSeries_LineIterator_DataAccessor_IndicatorBase_Indicator_IndicatorKeltnerChannels</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.indicatorKC.IndicatorKeltnerChannels.alias">
+<span class="sig-name descname"><span class="pre">alias</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels.alias" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.indicatorKC.IndicatorKeltnerChannels.aliased">
+<span class="sig-name descname"><span class="pre">aliased</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels.aliased" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.indicatorKC.IndicatorKeltnerChannels.frompackages">
+<span class="sig-name descname"><span class="pre">frompackages</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels.frompackages" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.indicatorKC.IndicatorKeltnerChannels.linealias">
+<span class="sig-name descname"><span class="pre">linealias</span></span><a class="headerlink" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels.linealias" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AutoInfoClass_la_LineSeries_la_LineIterator_la_DataAccessor_la_IndicatorBase_la_Indicator_la_IndicatorKeltnerChannels</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.indicatorKC.IndicatorKeltnerChannels.packages">
+<span class="sig-name descname"><span class="pre">packages</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#btToolbox.indicatorKC.IndicatorKeltnerChannels.packages" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-btToolbox.loggingUtils">
+<span id="bttoolbox-loggingutils-module"></span><h2>btToolbox.loggingUtils module<a class="headerlink" href="#module-btToolbox.loggingUtils" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.loggingUtils.log">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.loggingUtils.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">txt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.loggingUtils.log" title="Permalink to this definition"></a></dt>
+<dd><p>Custom log function to print strategy-specific logs.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>self: Reference to the strategy instance.
+txt (str): Text to be logged.
+dt (datetime | float | None): Datetime or float timestamp. Defaults to None.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.loggingUtils.notify_order">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.loggingUtils.</span></span><span class="sig-name descname"><span class="pre">notify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Order</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.loggingUtils.notify_order" title="Permalink to this definition"></a></dt>
+<dd><p>Notification function for order status changes.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>self: Reference to the strategy instance.
+order (bt.Order): Order object representing the current order.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.loggingUtils.print_values_candel">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.loggingUtils.</span></span><span class="sig-name descname"><span class="pre">print_values_candel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">self</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">btfeeds.BaseData</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.loggingUtils.print_values_candel" title="Permalink to this definition"></a></dt>
+<dd><p>Custom function to print candle values.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>self: Reference to the strategy instance.
+d (Type[btfeeds.BaseData]): Candle data.</p>
+</dd>
+<dt>Returns:</dt><dd><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-btToolbox.retrievesDataBroker">
+<span id="bttoolbox-retrievesdatabroker-module"></span><h2>btToolbox.retrievesDataBroker module<a class="headerlink" href="#module-btToolbox.retrievesDataBroker" title="Permalink to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.retrievesDataBroker.set_store">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.retrievesDataBroker.</span></span><span class="sig-name descname"><span class="pre">set_store</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency_trade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">CCXTStore</span></span></span><a class="headerlink" href="#btToolbox.retrievesDataBroker.set_store" title="Permalink to this definition"></a></dt>
+<dd><p>Set up and return a CCXTStore instance.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>exchange_id (str): Identifier for the exchange.
+currency_trade (str): Currency used for trading.</p>
+</dd>
+<dt>Returns:</dt><dd><p>CCXTStore: Configured CCXTStore instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.retrievesDataBroker.retrieves_data">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.retrievesDataBroker.</span></span><span class="sig-name descname"><span class="pre">retrieves_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">curr_traded</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">currency_trade</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">store</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">CCXTStore</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">CCXTFeed</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#btToolbox.retrievesDataBroker.retrieves_data" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve data using CCXTStore based on specified parameters.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>curr_traded (str): Symbol of the traded asset.
+currency_trade (str): Currency used for trading.
+store (CCXTStore): CCXTStore instance.
+data_args (dict): Dictionary containing data-related arguments.</p>
+</dd>
+<dt>Returns:</dt><dd><p>Type[CCXTStore.DataCls]: Retrieved data instance.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="btToolbox.retrievesDataBroker.retrive_broker_mapping">
+<span class="sig-prename descclassname"><span class="pre">btToolbox.retrievesDataBroker.</span></span><span class="sig-name descname"><span class="pre">retrive_broker_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exchange_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span></span></span><a class="headerlink" href="#btToolbox.retrievesDataBroker.retrive_broker_mapping" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve broker mapping for order types and order status.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>exchange_id (str): Identifier for the exchange.</p>
+</dd>
+<dt>Returns:</dt><dd><p>dict: Broker mapping for order types and status.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-btToolbox.strategyKC">
+<span id="bttoolbox-strategykc-module"></span><h2>btToolbox.strategyKC module<a class="headerlink" href="#module-btToolbox.strategyKC" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">btToolbox.strategyKC.</span></span><span class="sig-name descname"><span class="pre">KeltnerChannelsStrategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Strategy</span></code></p>
+<p>Custom strategy based on Keltner Channels.</p>
+<dl>
+<dt>Args:</dt><dd><ul class="simple">
+<li><p>period_EMA (int): Period for Exponential Moving Average (default: 20).</p></li>
+<li><p>period_ATR (int): Period for Average True Range (default: 14).</p></li>
+<li><p>live (bool): Flag for live trading (default: False).</p></li>
+<li><p>risk_amount_buy (float): Risk amount for buy orders as a percentage of cash (default: 30%).</p></li>
+<li><p>risk_amount_sell (float): Risk amount for sell orders as a percentage of cash (default: 15%).</p></li>
+<li><p>stopprice (float): Stop price parameter (default: 0.01).</p></li>
+<li><p>order_params_buy (float): Order parameter for buy orders (default: 1.8).</p></li>
+<li><p>order_params_sell (float): Order parameter for sell orders (default: 0.8).</p></li>
+<li><p>print_position (bool): Flag to print position information (default: True).</p></li>
+<li><p>debug (bool): Flag for debug mode (default: False).</p></li>
+</ul>
+</dd>
+<dt>Keltner Channels calcolati come segue:</dt><dd><p>atrlow = EMA - 2 * ATR
+atrhigh = EMA + 2 * ATR</p>
+</dd>
+<dt>Strategy Logic:</dt><dd><dl>
+<dt>Entry Conditions:</dt><dd><ul class="simple">
+<li><p>Buy Signal: Generated when the closing price crosses above the upper Keltner Band (CrossOver BUY).</p></li>
+<li><p>Sell Signal: Generated when the closing price crosses below the lower Keltner Band (CrossOver SELL).</p></li>
+</ul>
+</dd>
+<dt>Exit Conditions:</dt><dd><ul>
+<li><dl>
+<dt>Return Inside Keltner Bands:</dt><dd><ul class="simple">
+<li><p>If the strategy is already in a position, exit occurs when the closing price re-enters</p></li>
+</ul>
+<p>within the Keltner Bands.
+- For long positions, check if the closing price is below the upper Keltner Band.
+- For short positions, check if the closing price is above the lower Keltner Band.
+If this condition is met, a signal is generated to close the position.</p>
+</dd>
+</dl>
+</li>
+<li><dl>
+<dt>Stop Loss:</dt><dd><ul>
+<li><dl>
+<dt>An alternative exit strategy is the stop loss.</dt><dd><ul class="simple">
+<li><p>For long positions, the stop loss is calculated as a percentage (stopprice) below</p></li>
+</ul>
+<p>the opening price.
+- For short positions, the stop loss is calculated as a percentage (stopprice) above
+the opening price.
+If the closing price reaches or surpasses the stop loss level, a signal is generated
+to close the position.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</dd>
+<dt>Position Management:</dt><dd><p>The risk amount for buy and sell orders is determined by risk_amount_buy and risk_amount_sell,
+respectively, as a percentage of available capital.
+Parameters order_params_buy and order_params_sell are added and subtracted, respectively, to
+calculate the order price based on the closing and low prices.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>For long positions, price = d.close * (1.0 + self.p.order_params_buy / 100.0),</p></li>
+<li><p>For short positions price = d.low * (1.0 - self.p.order_params_sell / 100.0)).</p></li>
+</ul>
+</div></blockquote>
+</dd>
+</dl>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.params">
+<span class="sig-name descname"><span class="pre">params</span></span><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.params" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AutoInfoClass_LineRoot_LineMultiple_LineSeries_LineIterator_DataAccessor_StrategyBase_Strategy_KeltnerChannelsStrategy</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.log">
+<span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">txt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">datetime</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.log" title="Permalink to this definition"></a></dt>
+<dd><p>Logging function for the strategy.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.notify_order">
+<span class="sig-name descname"><span class="pre">notify_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">order</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Order</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.notify_order" title="Permalink to this definition"></a></dt>
+<dd><p>Notification function for order events.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.params_order">
+<span class="sig-name descname"><span class="pre">params_order</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">d</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Type</span><span class="p"><span class="pre">[</span></span><span class="pre">btfeeds.BaseData</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_buy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.params_order" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate order price based on specified parameters.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>d (Type[btfeeds.BaseData]): Data instance.
+is_buy (bool): Flag indicating if it’s a buy order (default: True).</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: Calculated order price.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.alias">
+<span class="sig-name descname"><span class="pre">alias</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.alias" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.aliased">
+<span class="sig-name descname"><span class="pre">aliased</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">''</span></em><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.aliased" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.frompackages">
+<span class="sig-name descname"><span class="pre">frompackages</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.frompackages" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.linealias">
+<span class="sig-name descname"><span class="pre">linealias</span></span><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.linealias" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AutoInfoClass_la_LineSeries_la_LineIterator_la_DataAccessor_la_StrategyBase_la_Strategy_la_KeltnerChannelsStrategy</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.lines">
+<span class="sig-name descname"><span class="pre">lines</span></span><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.lines" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">Lines_LineSeries_LineIterator_DataAccessor_StrategyBase_Strategy_KeltnerChannelsStrategy</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.next">
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.next" title="Permalink to this definition"></a></dt>
+<dd><p>Main strategy logic executed on each data point.</p>
+<p>Iterates over data feeds, checks conditions, and executes buy/sell orders.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.packages">
+<span class="sig-name descname"><span class="pre">packages</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">()</span></em><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.packages" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.plotinfo">
+<span class="sig-name descname"><span class="pre">plotinfo</span></span><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.plotinfo" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AutoInfoClass_pi_LineSeries_pi_LineIterator_pi_DataAccessor_pi_StrategyBase_pi_Strategy_pi_KeltnerChannelsStrategy</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="btToolbox.strategyKC.KeltnerChannelsStrategy.plotlines">
+<span class="sig-name descname"><span class="pre">plotlines</span></span><a class="headerlink" href="#btToolbox.strategyKC.KeltnerChannelsStrategy.plotlines" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AutoInfoClass_pl_LineSeries_pl_LineIterator_pl_DataAccessor_pl_StrategyBase_pl_Strategy_pl_KeltnerChannelsStrategy</span></code></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-btToolbox">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-btToolbox" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="backtestingMainKC.html" class="btn btn-neutral float-left" title="backtestingMainKC module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="liveMainKC.html" class="btn btn-neutral float-right" title="liveMainKC module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Giovanni Sanchez.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

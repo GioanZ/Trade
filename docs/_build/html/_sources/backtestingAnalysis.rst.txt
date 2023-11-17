@@ -1,0 +1,7 @@
+backtestingAnalysis module
+==========================
+
+.. automodule:: backtestingAnalysis
+   :members:
+   :undoc-members:
+   :show-inheritance:
