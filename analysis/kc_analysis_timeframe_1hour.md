@@ -1,11 +1,7 @@
 # Keltner Channels Analysis BTC/USDT
 
 ## What it is about:
-This document provides an extensive analysis of a trading strategy utilizing Keltner Channels applied to BTC (Bitcoin), employing 1-hour Binance data from January 1st, 2021, to October 7th, 2023, extracted from the "binance.csv" file. The analysis centers on backtesting, factoring in a 0.1% transition commission to emulate Binance broker commission structure.
-
-
-### Graph:
-![binance_graph_btc_usdt](./../images/BTC-USDT%20Binance.png "BTC/USDT Binance Graph")
+This document provides an extensive analysis of a trading strategy utilizing Keltner Channels applied to BTC (Bitcoin), employing 1-hour Binance data from January 1st, 2021, to October 7th, 2023, extracted from the "binance.csv" file. The analysis centers on backtesting, factoring in a 0.1% transition commission to emulate The Binance broker commission structure.
 
 ## Analysis:
 
