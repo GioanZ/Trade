@@ -2,7 +2,7 @@
 
 ## Project Information
 
-The most complete and optimized code is located in the **Algorithmic Technical Analysis** directory, while **Trading ML** represents a machine learning test.
+The most complete and optimized code is located in the [Keltner Channels Strategy](https://github.com/GioanZ/Trade/tree/main/Algorithmic%20Technical%20Analysis/Keltner%20Channels%20Strategy) directory, while [Trading ML](https://github.com/GioanZ/Trade/tree/main/Trading%20ML) represents a machine learning test.
 
 ## Important Note
 
